@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arcade Bundle</title>
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; font-family: system-ui, Arial; background: #0b0f1a; color: #e8eefc; }
+      header { padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      main { display: grid; grid-template-columns: 320px 1fr; min-height: calc(100vh - 58px); }
+      nav { padding: 16px; border-right: 1px solid rgba(255,255,255,0.08); }
+      .btn { width: 100%; padding: 10px 12px; margin: 8px 0; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12);
+             background: rgba(255,255,255,0.06); color: inherit; cursor: pointer; text-align: left; }
+      .btn:hover { background: rgba(255,255,255,0.10); }
+      .meta { opacity: 0.8; font-size: 12px; }
+      iframe { width: 100%; height: 100%; border: 0; background: #000; }
+      .pad { padding: 16px; }
+      a { color: #9cc7ff; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div style="display:flex; align-items:baseline; gap:12px;">
+        <h1 style="margin:0; font-size:18px;">Arcade Bundle</h1>
+        <div class="meta">Launcher (static) + engine2d core</div>
+      </div>
+    </header>
+
+    <main>
+      <nav>
+        <div class="meta">Alege un joc:</div>
+        <button class="btn" data-game="game-01">Game 01 — demo (top-down)</button>
+        <div class="pad meta">
+          Rulează din root cu un server static și deschide această pagină.
+          <br />
+          Vezi <a href="../../README.md">README</a>.
+        </div>
+      </nav>
+
+      <section>
+        <iframe id="frame" title="game" src="../../games/game-01/index.html"></iframe>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

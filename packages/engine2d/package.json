@@ -1,0 +1,9 @@
+{
+  "name": "@arcade/engine2d",
+  "version": "0.0.1",
+  "type": "module",
+  "private": false,
+  "exports": {
+    ".": "./src/index.js"
+  }
+}
