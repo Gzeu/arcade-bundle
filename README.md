@@ -7,6 +7,10 @@ Monorepo pentru un "arcade bundle" (10 mini-jocuri) + un `engine2d` comun (web-f
 - `apps/launcher/`: launcher static (meniul care deschide jocurile).
 - `games/game-01/`: demo minimal care folosește engine2d.
 
+## Docs (skills)
+- `2d-games`: `docs/skills/2d-games.md`
+- Backlog `2d-games`: `docs/roadmap/2d-games-backlog.md`
+
 ## Rulare locală (fără build tools)
 1. Clone:
    ```bash
