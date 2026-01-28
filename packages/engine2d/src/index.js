@@ -3,3 +3,5 @@ export * from './input/Input.js';
 export * from './physics/Collider.js';
 export * from './physics/World2D.js';
 export * from './camera/Camera2D.js';
+export * from './sprites/index.js';
+export * from './tilemap/index.js';
