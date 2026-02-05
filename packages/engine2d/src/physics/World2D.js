@@ -18,6 +18,7 @@ export class World2D {
   // Resolve foarte simplu: doar AABB vs AABB, separare pe axa cu penetrarea minimă.
   moveAABB(c, dx, dy, onHit) {
     c.x += dx;
+    // X axis resolution
     for (const o of this.colliders) {
       if (o === c) continue;
       if (!canCollide(c, o)) continue;
@@ -32,6 +33,7 @@ export class World2D {
     }
 
     c.y += dy;
+    // Y axis resolution
     for (const o of this.colliders) {
       if (o === c) continue;
       if (!canCollide(c, o)) continue;
@@ -44,5 +46,27 @@ export class World2D {
 
       onHit?.(o);
     }
+  }
+
+  /**
+   * Helper to quickly add multiple static rects (e.g. from tilemap builder).
+   */
+  addStaticRects(rects, layerMask = 1) {
+    return rects.map(r => {
+      // Assuming a Collider-like object structure or using Collider class if imported.
+      // Since World2D is in physics, let's assume we just push simple objects compatible with Collider interface
+      // OR user uses TilemapColliderBuilder which does `new Collider`.
+      // This method is just a convenience if you have raw rects.
+      const c = {
+        x: r.x, y: r.y, w: r.w, h: r.h,
+        kind: 'aabb',
+        layer: layerMask,
+        mask: 0,
+        isTrigger: false,
+        isStatic: true
+      };
+      this.colliders.push(c);
+      return c;
+    });
   }
 }
